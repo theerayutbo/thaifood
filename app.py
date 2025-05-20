@@ -21,25 +21,25 @@ mock_menu_items_data = [
         "id": 2,
         "name_en": "Green Curry with Pork", "name_th": "แกงเขียวหวานหมู",
         "description_en": "Rich coconut milk, sweet and savory.", "description_th": "เข้มข้นกะทิ หวานมันกลมกล่อม",
-        "price": 70, "image": "green_curry_pork.jpg", "category": "Curry"
+        "price": 70, "image": "green_curry_pork.png", "category": "Curry"
     },
     {
         "id": 3,
         "name_en": "Tom Yum Goong (Spicy Shrimp Soup)", "name_th": "ต้มยำกุ้ง",
         "description_en": "Hot and sour soup with fresh shrimp.", "description_th": "ซุปเปอร์แซ่บ ซดคล่องคอ",
-        "price": 80, "image": "tom_yum_goong.jpg", "category": "Soup"
+        "price": 80, "image": "tom_yum_goong.png", "category": "Soup"
     },
     {
         "id": 4,
         "name_en": "Pineapple Fried Rice", "name_th": "ข้าวผัดสับปะรด",
         "description_en": "Sweet and savory fried rice served in a pineapple.", "description_th": "ข้าวผัดหอมหวาน เสิร์ฟในลูกสับปะรด",
-        "price": 90, "image": "pineapple_fried_rice.jpg", "category": "Rice"
+        "price": 90, "image": "pineapple_fried_rice.png", "category": "Rice"
     },
 ]
 
 mock_grocery_items_data = [
     {"id": 101, "name_en": "Green Curry Paste (100g)", "name_th": "พริกแกงเขียวหวาน (100g)", "price": 35, "image": "green_curry_paste.jpg"},
-    {"id": 102, "name_en": "Premium Fish Sauce (300ml)", "name_th": "น้ำปลาอย่างดี (300ml)", "price": 40, "image": "fish_sauce.jpg"},
+    {"id": 102, "name_en": "Premium Fish Sauce (300ml)", "name_th": "น้ำปลาอย่างดี (300ml)", "price": 40, "image": "fish_sauce.png"},
 ]
 
 # --- Language/Localization Strings ---
