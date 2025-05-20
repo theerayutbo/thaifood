@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<section class="menu-section">
+    <h2>{{ ui(section_title_key) }}</h2>
+    <div class="item-grid">
+        {% for item in items %}
+        <div class="item-card" id="menu-item-{{ item.id }}">
+            <img src="{{ url_for('static', filename='images/' + (item.image if item.image else 'placeholder_dark.png')) }}" alt="{{ item.name }}">
+            <h3>{{ item.name }}</h3>
+            {% if item.description %}
+            <p class="item-description">{{ item.description }}</p>
+            {% endif %}
+            <p class="item-price">{{ ui('price_label') }}: {{ item.price }} {{ ui('currency_symbol') }}</p>
+            <button class="add-to-cart-button" data-item-id="{{ item.id }}" data-item-name="{{ item.name }}">{{ ui('add_to_cart_button') }}</button>
+        </div>
+        {% endfor %}
+        {% if not items %}
+        <p>No items to display in this section.</p>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,356 @@
+/* --- Dark Warm Theme --- */
+:root {
+    --bg-color: #2c2620; /* Dark warm brown */
+    --surface-color: #3e352e; /* Slightly lighter warm brown for cards/surfaces */
+    --primary-color: #e8790a; /* Warm orange for accents, buttons */
+    --secondary-color: #c05708; /* Deeper orange for hover states */
+    --text-color: #f5eadd; /* Off-white/light beige for text */
+    --text-muted-color: #ab9d8a; /* Muted beige for less important text */
+    --border-color: #5a4d3f; /* Darker warm brown for borders */
+    --header-bg-color: #1f1a15; /* Very dark brown for header */
+    --sidebar-bg-color: #332a22; /* Sidebar background */
+    --ai-message-bg: #4a3f32; /* AI message background */
+    --user-message-bg: var(--primary-color); /* User message background */
+    --user-message-text: #ffffff;
+    --link-color: #ffab66; /* Lighter orange for links */
+    --button-text-color: #ffffff;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --card-hover-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    font-family: 'Sarabun', 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.montserrat-font {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-header {
+    background-color: var(--header-bg-color);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main-header .logo a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.main-header nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.main-header nav a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.language-switcher {
+    margin-left: 25px;
+}
+.lang-button {
+    padding: 6px 12px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 4px;
+    font-size: 0.9em;
+    transition: background-color 0.3s, color 0.3s;
+}
+.lang-button:hover {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    text-decoration: none;
+}
+
+
+.content-wrapper {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    max-width: 1500px; /* Wider for modern layouts */
+    margin: 0 auto;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: var(--bg-color); /* Main content same as body or slightly different */
+}
+
+.ai-sidebar {
+    width: 350px;
+    min-width: 320px;
+    background-color: var(--sidebar-bg-color);
+    padding: 25px;
+    border-left: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+}
+
+.ai-sidebar-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ai-sidebar-header h4 {
+    margin: 0;
+    font-size: 1.4em;
+    color: var(--primary-color);
+}
+.ai-sidebar-header h4 .montserrat-font {
+    color: var(--text-color); /* AI part of title */
+}
+
+
+.ai-sidebar-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#ai-chat-area {
+    overflow-y: auto;
+    padding: 15px;
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    min-height: 200px;
+    max-height: 40vh; /* Adjust as needed */
+    flex-grow: 1; /* Allow chat area to take available space */
+}
+
+.ai-message, .user-message {
+    padding: 10px 15px;
+    border-radius: 18px;
+    margin-bottom: 10px;
+    max-width: 90%;
+    word-wrap: break-word;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.ai-message {
+    background-color: var(--ai-message-bg);
+    color: var(--text-color);
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+}
+
+.user-message {
+    background-color: var(--user-message-bg);
+    color: var(--user-message-text);
+    align-self: flex-end;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+
+.ai-input-area {
+    display: flex;
+    margin-bottom: 15px; /* Space before action buttons */
+}
+
+#ai-user-input {
+    flex-grow: 1;
+    padding: 12px 15px;
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    outline: none;
+    font-size: 1em;
+}
+#ai-user-input::placeholder {
+    color: var(--text-muted-color);
+}
+#ai-user-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color-transparent); /* Optional focus ring */
+}
+
+.ai-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between buttons */
+}
+
+.ai-sidebar-button {
+    width:100%;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.2s ease-in-out;
+    text-align: center;
+}
+.ai-sidebar-button:hover {
+    background-color: var(--secondary-color);
+}
+
+
+.main-footer {
+    text-align: center;
+    padding: 25px;
+    background-color: var(--header-bg-color);
+    color: var(--text-muted-color);
+    font-size: 0.9em;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Item Grid */
+.menu-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.item-card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 0; /* Padding will be inside content */
+    text-align: left; /* Align text to left for better readability */
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    overflow: hidden; /* To contain the image nicely */
+    display: flex;
+    flex-direction: column;
+}
+.item-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+.item-card.highlighted-item {
+    box-shadow: 0 0 18px 7px var(--primary-color);
+    border: 2px solid var(--primary-color);
+    transform: scale(1.03) translateY(-5px);
+}
+
+
+.item-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    /* border-radius: 10px 10px 0 0; No need if padding is 0 and overflow hidden */
+    display: block;
+}
+
+.item-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows button to be pushed to bottom */
+}
+
+.item-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.item-description {
+    font-size: 0.95em;
+    color: var(--text-muted-color);
+    min-height: 45px;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Pushes price and button down */
+}
+.item-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.add-to-cart-button {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    align-self: flex-start; /* Button does not take full width */
+}
+
+.add-to-cart-button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* For placeholder text in index if no items */
+.menu-section > p {
+    text-align: center;
+    font-size: 1.1em;
+    color: var(--text-muted-color);
+}
+
+.thinking-dots span {
+    animation: blink 1.4s infinite both;
+    display: inline-block;
+}
+.thinking-dots span:nth-child(2) {
+    animation-delay: .2s;
+}
+.thinking-dots span:nth-child(3) {
+    animation-delay: .4s;
+}
+@keyframes blink {
+    0% { opacity: .2; }
+    20% { opacity: 1; }
+    100% { opacity: .2; }
+}

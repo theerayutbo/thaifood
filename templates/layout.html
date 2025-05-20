@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="{{ current_lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ ui('shop_title') }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <header class="main-header">
+            <div class="logo"><a href="{{url_for('home')}}">เสน่ห์จันทน์ AI</a></div>
+            <nav>
+                <a href="{{ url_for('home') }}">{{ ui('nav_home') }}</a>
+                <a href="{{ url_for('menu_page') }}">{{ ui('nav_menu') }}</a>
+                <a href="{{ url_for('grocery_page') }}">{{ ui('nav_grocery') }}</a>
+                <a href="#">{{ ui('nav_cart') }} (0)</a>
+                <div class="language-switcher">
+                    {% if current_lang == 'en' %}
+                    <a href="{{ url_for('set_language', lang='th') }}" class="lang-button">{{ ui('lang_switcher_th') }}</a>
+                    {% else %}
+                    <a href="{{ url_for('set_language', lang='en') }}" class="lang-button">{{ ui('lang_switcher_en') }}</a>
+                    {% endif %}
+                </div>
+            </nav>
+        </header>
+
+        <div class="content-wrapper">
+            <main class="main-content">
+                {% block content %}
+                {% endblock %}
+            </main>
+
+            <aside class="ai-sidebar">
+                <div class="ai-sidebar-header">
+                    <h4><span class="montserrat-font">AI</span> {{ ui('ai_assistant_title') }}</h4>
+                </div>
+                <div class="ai-sidebar-content">
+                    <div id="ai-chat-area">
+                        <div class="ai-message">{{ ui('ai_greeting') }}</div>
+                        </div>
+                    <div class="ai-input-area">
+                        <input type="text" id="ai-user-input" placeholder="{{ ui('ai_input_placeholder') }}">
+                        </div>
+                    <div class="ai-action-buttons">
+                        <button id="ai-ask-general-button" class="ai-sidebar-button">{{ ui('ai_btn_ask_general') }}</button>
+                        <button id="ai-get-recipe-button" class="ai-sidebar-button">{{ ui('ai_btn_get_recipe') }}</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <footer class="main-footer">
+            <p>{{ ui('footer_text')|safe }}</p>
+        </footer>
+    </div>
+    <script>
+        // Pass localized UI texts to JavaScript
+        const uiTextsJS = {
+            ollamaError: "{{ ui('ollama_error') }}",
+            ollamaThinking: "{{ ui('ollama_thinking') }}",
+            recipeInputPlaceholder: "{{ ui('recipe_input_placeholder') }}",
+            itemNotFoundOnPage: "{{ ui('item_not_found_on_page') }}",
+            itemNotFoundCurrentList: "{{ ui('item_not_found_current_list') }}",
+            cartItemAddedResponse: "{{ ui('cart_item_added_response') }}"
+        };
+        const currentLocaleJS = "{{ current_lang }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/ai_sidebar.js') }}"></script>
+</body>
+</html>
