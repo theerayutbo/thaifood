@@ -11,9 +11,10 @@
     --sidebar-bg-color: #332a22; /* Sidebar background */
     --ai-message-bg: #4a3f32; /* AI message background */
     --user-message-bg: var(--primary-color); /* User message background */
-    --user-message-text: #ffffff;
+    --user-message-text: #2c2620; /* Dark text for better contrast on orange */
     --link-color: #ffab66; /* Lighter orange for links */
     --button-text-color: #ffffff;
+    --primary-color-transparent: rgba(232, 121, 10, 0.3); /* Primary color with alpha for focus rings */
     --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     --card-hover-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
@@ -23,7 +24,7 @@ body {
     margin: 0;
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.7;
+    line-height: 1.75; /* Slightly increased for better readability */
     font-size: 16px;
 }
 
@@ -134,10 +135,11 @@ a:hover {
 .ai-sidebar-header h4 {
     margin: 0;
     font-size: 1.4em;
-    color: var(--primary-color);
+    color: var(--text-color); /* Default text color for "Assistant" */
 }
 .ai-sidebar-header h4 .montserrat-font {
-    color: var(--text-color); /* AI part of title */
+    color: var(--primary-color); /* Primary color for "AI" span */
+    font-weight: 700; /* Ensure AI part is bold */
 }
 
 
@@ -299,7 +301,7 @@ a:hover {
     margin-bottom: 10px;
     font-size: 1.5em;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--text-color); /* Changed from primary-color for better readability */
 }
 .item-description {
     font-size: 0.95em;

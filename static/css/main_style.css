@@ -1,0 +1,110 @@
+body {
+    font-family: 'Sarabun', sans-serif;
+    margin: 0;
+    background-color: #f4f7f6; /* Light, slightly cool gray */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    max-width: 550px; /* Slightly narrower for a focused look */
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #2a7f62; /* A calming green */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+h1 .montserrat-font { /* If you keep the 'AI' span */
+    font-weight: 700;
+}
+
+.ingredient-selector label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    font-size: 0.95em;
+}
+
+.ingredient-selector select,
+.ingredient-selector button {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #fff; /* Ensure select background is white */
+}
+
+.ingredient-selector select {
+    appearance: none; /* Remove default system appearance */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M5%207.5L10%2012.5L15%207.5%22%20stroke%3D%22%23555%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px 16px;
+    padding-right: 40px; /* Make space for custom arrow */
+}
+
+.ingredient-selector button {
+    background-color: #3498db; /* A friendly blue */
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.ingredient-selector button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+#recommendationResult {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #eaf6ff; /* Light blue tint */
+    border-left: 5px solid #3498db; /* Blue accent border */
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease-out; /* Add a subtle fade-in */
+}
+
+#recommendationResult h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #2980b9; /* Darker blue for heading */
+    font-size: 1.2em;
+}
+
+#recommendationResult p {
+    margin-bottom: 5px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ensure Google Fonts are linked in main.html if not already globally available through other CSS.
+   The original main.html had:
+   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+   This should remain in main.html's <head>.
+*/
